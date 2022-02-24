@@ -28,6 +28,8 @@ GEM
     netrc (0.11.0)
     nokogiri (1.13.3-x64-mingw32)
       racc (~> 1.4)
+    nokogiri (1.13.3-x86_64-linux)
+      racc (~> 1.4)
     nokogiri-happymapper (0.9.0)
       nokogiri (~> 1.5)
     parallel (1.21.0)
@@ -38,6 +40,11 @@ GEM
     rainbow (3.1.1)
     rake (13.0.6)
     regexp_parser (2.2.1)
+    rest-client (2.1.0)
+      http-accept (>= 1.7.0, < 2.0)
+      http-cookie (>= 1.0.2, < 2.0)
+      mime-types (>= 1.16, < 4.0)
+      netrc (~> 0.8)
     rest-client (2.1.0-x64-mingw32)
       ffi (~> 1.9)
       http-accept (>= 1.7.0, < 2.0)
@@ -59,6 +66,7 @@ GEM
     ruby-progressbar (1.11.0)
     unf (0.1.4)
       unf_ext
+    unf_ext (0.0.8)
     unf_ext (0.0.8-x64-mingw32)
     unicode-display_width (2.1.0)
     webmock (3.14.0)
@@ -68,6 +76,7 @@ GEM
 
 PLATFORMS
   x64-mingw32
+  x86_64-linux
 
 DEPENDENCIES
   ipgeobase!
