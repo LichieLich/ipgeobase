@@ -15,6 +15,6 @@ gem "rest-client"
 
 gem "nokogiri", "~> 1.5"
 
-gem 'nokogiri-happymapper'
+gem "nokogiri-happymapper"
 
 gem "webmock"
