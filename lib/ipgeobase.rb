@@ -22,7 +22,7 @@ module Ipgeobase
   end
 
   def self.check_ip(ip)
-    raise "IP adress is out of range" if ip.split('.').any? { |ip| ip.to_i > 255 || ip.to_i < 0 }
-    raise "IP adress is incorrect" unless ip.split('.').all? { |ip| Float(ip) }
+    raise "IP adress is out of range" if ip.split('.').any? { |ip_part| ip_part.to_i > 255 || ip_part.to_i.negative? }
+    raise "IP adress is incorrect" unless ip.split('.').all? { |ip_part| Float(ip_part) }
   end
 end
