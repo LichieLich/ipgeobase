@@ -1,8 +1,7 @@
+![CI status](https://github.com/LichieLich/ipgeobase/actions/workflows/main.yml/badge.svg)
 # Ipgeobase
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/ipgeobase`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+Ipgeobase is a study project in creating gems. It provides ip metainformation via http://ip-api.com/. You van get information aboout country, countryCode, city and coordinates for given IP adress.
 
 ## Installation
 
@@ -22,7 +21,16 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+```ruby
+require 'ipgeobase'
+
+ip_meta = Ipgeobase.lookup('8.8.8.8')
+ip_meta.city # Ashburn
+ip_meta.country # United States
+ip_meta.countryCode # US
+ip.lat # 39.03
+ip.lon # -77.5
+```
 
 ## Development
 
@@ -32,4 +40,4 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/ipgeobase.
+Bug reports and pull requests are welcome on GitHub at https://github.com/[LichieLich]/ipgeobase.
