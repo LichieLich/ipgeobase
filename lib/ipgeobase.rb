@@ -1,28 +1,19 @@
 # frozen_string_literal: true
 
 require_relative "ipgeobase/version"
+require_relative "ip_information"
 require 'rest-client'
-require 'happymapper'
 
 module Ipgeobase
-  class Error < StandardError; end
-  class IpInformation
-    include HappyMapper
-    tag 'query'
-    element :country, String, tag: 'country'
-    element :city, String, tag: 'city'
-    element :countryCode, String, tag: 'countryCode'
-    element :lat, String, tag: 'lat'
-    element :lon, String, tag: 'lon'
-  end
+  IPAPI = "http://ip-api.com/xml/"
   
   def self.lookup(ip)
     check_ip(ip)
-    IpInformation.parse(RestClient.get("http://ip-api.com/xml/#{ip}"))
+    IpInformation.parse(RestClient.get("#{IPAPI}#{ip}"))
   end
 
   def self.check_ip(ip)
     raise "IP adress is out of range" if ip.split('.').any? { |ip_part| ip_part.to_i > 255 || ip_part.to_i.negative? }
-    raise "IP adress is incorrect" unless ip.split('.').all? { |ip_part| Float(ip_part) }
+    raise "IP adress is incorrect" unless ip.split('.').all? { |ip_part| Integer(ip_part) }
   end
 end
